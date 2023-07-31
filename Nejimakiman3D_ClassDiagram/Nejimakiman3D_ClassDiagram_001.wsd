@@ -1,4 +1,4 @@
-@startuml ネジ巻きマン3D化計画 
+@startuml Nejimakiman3D_ClassDiagram 
 title ネジ巻きマン
 left to right direction
 
