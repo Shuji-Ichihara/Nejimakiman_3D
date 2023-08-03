@@ -308,6 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 162d1c02a39a0444089084aabce13be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mouseDragCount: {fileID: 1870644470}
   _split: 6
 --- !u!54 &927401243
 Rigidbody:
@@ -768,7 +769,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 'MouseDragCount
+
+'
 --- !u!222 &1870644471
 CanvasRenderer:
   m_ObjectHideFlags: 0
