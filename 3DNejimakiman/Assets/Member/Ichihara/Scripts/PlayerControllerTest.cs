@@ -1,19 +1,24 @@
-using Cysharp.Threading.Tasks;
+ï»¿using Cysharp.Threading.Tasks;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControllerTest : MonoBehaviour
 {
-    // •`‚¢‚½‰~‚Ì‹““®‚Ì•ªŠ„
+    // ãƒ‡ãƒãƒƒã‚°ç¢ºèªç”¨
+    [SerializeField]
+    private Text _mouseDragCount = null;
+
+    // æã„ãŸå††ã®æŒ™å‹•ã®åˆ†å‰²
     [SerializeField]
     private int _split = 6;
 
-    // ƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½À•W
+    // ãƒœã‚¿ãƒ³ã‚’æŠ¼ã—ãŸåº§æ¨™
     private Vector2 _coordinatesOfMouseButtonPress = Vector3.zero;
     private Vector3 _halfScreenSize = Vector3.zero;
 
     private float _tan = 0;
-    // ƒ}ƒEƒX‚ÌˆÚ“®—Ê
+    // ãƒã‚¦ã‚¹ã®ç§»å‹•é‡
     private float _previousRadian = 0;
     private int _moveDistance = 0;
 
@@ -47,10 +52,11 @@ public class PlayerControllerTest : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒ}ƒEƒX‚ğƒhƒ‰ƒbƒO‚µ‚Ä‚¢‚éŠÔ‚Ìˆ—
+    /// ãƒã‚¦ã‚¹ã‚’ãƒ‰ãƒ©ãƒƒã‚°ã—ã¦ã„ã‚‹é–“ã®å‡¦ç†
     /// </summary>
     private void DragMouse()
     {
+        _mouseDragCount.text = "0";
         _coordinatesOfMouseButtonPress = Input.mousePosition - _halfScreenSize;
         float radian = Mathf.Atan2(_coordinatesOfMouseButtonPress.x
             , _coordinatesOfMouseButtonPress.y);
@@ -65,13 +71,20 @@ public class PlayerControllerTest : MonoBehaviour
     }
 
     /// <summary>
-    /// ƒ}ƒEƒX‚ğ—£‚µ‚½‚Ìˆ—
+    /// ãƒã‚¦ã‚¹ã‚’é›¢ã—ãŸæ™‚ã®å‡¦ç†
     /// </summary>
     private void UpMouse()
     {
+        _mouseDragCount.text = _moveDistance.ToString();
         MovePlayer(_moveDistance, _token).Forget();
     }
 
+    /// <summary>
+    /// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ç§»å‹•
+    /// </summary>
+    /// <param name="moveDistance">ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®ç§»å‹•è·é›¢</param>
+    /// <param name="token"> UniTask ã‚­ãƒ£ãƒ³ã‚»ãƒ«</param>
+    /// <returns></returns>
     private async UniTask MovePlayer(int moveDistance, CancellationTokenSource token = default)
     {
         float amountOfPlayerMovement = 0.0f;
