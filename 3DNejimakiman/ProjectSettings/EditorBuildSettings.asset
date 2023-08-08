@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Member/Metoki/Scenes/TitleScene.unity
+    guid: 857c39de43031c64da9b3f5645cea81c
+  - enabled: 1
+    path: Assets/Member/Metoki/Scenes/Tutorial.unity
+    guid: afbb7c033c9715446b469d377004014e
+  - enabled: 1
+    path: Assets/Member/Metoki/Scenes/PlayScene.unity
+    guid: 32d74b082aa7e2a45a2bafe60757fd16
   m_configObjects: {}
