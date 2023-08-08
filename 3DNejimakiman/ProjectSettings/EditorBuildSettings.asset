@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Member/Metoki/Scenes/PlayScene.unity
     guid: 32d74b082aa7e2a45a2bafe60757fd16
+  - enabled: 1
+    path: Assets/Member/Metoki/Scenes/PlaySceneTwo.unity
+    guid: d20c56e4c8dbcba45bedc019c443e278
   m_configObjects: {}
